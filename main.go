@@ -7,6 +7,8 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
+	"os/user"
 	"strings"
 
 	"github.com/gookit/color"
@@ -48,7 +50,7 @@ type GLUser struct {
 
 func GetUserConfig() UserConfig {
 	var viper = viper.New()
-	viper.AddConfigPath("~/.config/gitfetch/")
+	viper.AddConfigPath(string(os.Getenv("HOME")) + "/.config/gitfetch/")
 	viper.SetConfigName("config")
 	viper.SetConfigType("yaml")
 
@@ -82,6 +84,11 @@ func EmptyCheckFMT(string string) string {
 }
 
 func main() {
+	user, err := user.Current()
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println("Home Dir: " + user.HomeDir)
 	isGithub := flag.Bool("github", false, "select Github as your platform")
 	isGitlab := flag.Bool("gitlab", false, "select Gitlab as your platform")
 	isMono := flag.Bool("mono", false, "display with no colours")
