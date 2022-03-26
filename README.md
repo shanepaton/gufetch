@@ -2,10 +2,10 @@
 gitfetch is a CLI tool written in Go that can fetch your GitHub or Gitlab profile
 
 ## Setting up on Arch Linux
-### AUR
+<!--### AUR 
 ```bash
 yay -S gitfetch
-```
+```-->
 ### Manually
 ```bash
 git clone https://github.com/shanepaton/gitfetch.git
