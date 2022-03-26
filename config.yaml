@@ -1,0 +1,6 @@
+token:
+  gitlab: ""
+defualt:
+  githubUsername: ""
+  gitlabID: ""
+  site: ""
