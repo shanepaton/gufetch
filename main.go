@@ -8,7 +8,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"os/user"
 	"strings"
 
 	"github.com/gookit/color"
@@ -84,11 +83,6 @@ func EmptyCheckFMT(string string) string {
 }
 
 func main() {
-	user, err := user.Current()
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println("Home Dir: " + user.HomeDir)
 	isGithub := flag.Bool("github", false, "select Github as your platform")
 	isGitlab := flag.Bool("gitlab", false, "select Gitlab as your platform")
 	isMono := flag.Bool("mono", false, "display with no colours")
