@@ -1,4 +1,4 @@
-module shbox.me/gitfetch
+module shbox.me/gufetch
 
 go 1.18
 
