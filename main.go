@@ -49,7 +49,7 @@ type GLUser struct {
 
 func GetUserConfig() UserConfig {
 	var viper = viper.New()
-	viper.AddConfigPath(string(os.Getenv("HOME")) + "/.config/gitfetch/")
+	viper.AddConfigPath(string(os.Getenv("HOME")) + "/.config/gufetch/")
 	viper.SetConfigName("config")
 	viper.SetConfigType("yaml")
 
@@ -121,8 +121,8 @@ func main() {
 			return
 		}
 
-		fmt.Println(`        @@@@@@@@@@@@@@@                  gitfetch - Github`)
-		fmt.Println(`     @@@@@@@@@@@@@@@@@@@@@               ~~~~~~~~~`)
+		fmt.Println(`        @@@@@@@@@@@@@@@                  gufetch - Github`)
+		fmt.Println(`     @@@@@@@@@@@@@@@@@@@@@               ~~~~~~~~~~~~~~~~`)
 		fmt.Println(`   @@@@    @@@@&@@@@    @@@@             Username:  `, result.Login)
 		fmt.Println(`  @@@@@                 @@@@@            Name:      `, EmptyCheckFMT(result.Name))
 		fmt.Println(` @@@@@                   @@@@@           Bio:       `, EmptyCheckFMT(result.Bio))
@@ -161,7 +161,7 @@ func main() {
 				return
 			}
 
-			color.Println(`<fg=fca326>     ((                  ((</>              gitfetch - Gitlab`)
+			color.Println(`<fg=fca326>     ((                  ((</>              gufetch - Gitlab`)
 			color.Println(`<fg=fca326>    ((((                ((((</>             ~~~~~~~~~~~~~~~~~`)
 			color.Println(`<fg=fca326>   ((((((              (((((</>             Username:  `, EmptyCheckFMT(result.Login))
 			color.Println(`<fg=fca326>  ((((((((            (((((((</>            Name:      `, EmptyCheckFMT(result.Name))
